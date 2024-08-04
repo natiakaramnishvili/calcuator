@@ -1,0 +1,73 @@
+$black: rgb(0, 0, 0);
+$blackOp: rgb(0, 0, 0, 0.7);
+$lightBlack: rgb(0, 0, 0, 0.1);
+$white: rgb(255, 255, 255);
+$pink: rgb(66, 15, 87);
+$blue: rgb(21, 16, 110);
+$buttonsColor: rgb(133, 159, 230);
+$buttonHoverClr: rgb(133, 159, 230, 0.4);
+$stored-clr: rgb(255, 255, 255, 0.6);
+$current-clr: rgb(255, 255, 255,);
+
+
+  
+
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, $blue, $pink);
+    
+      .calculator-container{
+        font-family: "Noto Sans Math", sans-serif;
+        font-weight: 400;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        min-height: 100vh;
+        grid-template-columns: repeat(4, 88px);
+        grid-template-rows: minmax(100px, auto) repeat(5, 90px);
+        .output{
+            grid-column: 1/ -1;
+            background-color: $blackOp;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 10px;
+            .stored-numbers{
+            color: $stored-clr;
+            font-size: 22px;
+            }
+            .current-values{
+            font-size: 39px;
+            color: $white;
+            }
+            .stored-numbers,.current-values{
+                background-color: $blackOp;
+                width: 100%;
+                box-sizing: border-box;
+                border: none;
+                outline: none;
+                text-align: right;
+            }
+        }
+      }
+     button{
+        cursor: pointer;
+        outline: none;
+        border: 1px solid $white;
+        font-size: 27px;
+        background-color: $buttonsColor;
+        &:hover{
+            background-color: $buttonHoverClr ;
+        }
+     }
+     .twice-size-button{
+        grid-column: span 2;
+     }
+}
+@media screen and (max-width: 354px ){
+    .calculator-container{
+        grid-template-columns: repeat(4, 50px);
+        grid-template-rows: repeat(5, 60px);
+}}
